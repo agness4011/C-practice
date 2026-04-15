@@ -209,20 +209,130 @@
 //	}
 //}
 //주사위 3개를 던졌을 때, 합이 10이 되는 경우를 모두 출력
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
+//int main() {
+//	int i, j, k;
+//	for (i = 1; i <= 6; i++) {
+//		for (j = 1; j <= 6; j++) {
+//			for (k = 1; k <= 6; k++) {
+//				if (i + j + k == 10) {
+//					printf("(%d, %d, %d)", i, j, k);
+//					printf("\n");
+//				}
+//			}
+//		}
+//	}
+//}
+
+//p.294 break 문~
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
+//#define SEED_MONEY 1000000
+//int main() {
+//	int year = 0, money = SEED_MONEY;
+//	while (1) {
+//		year++;
+//		money += money * 0.30;
+//		if ( money > 10 * SEED_MONEY)
+//			break;
+//	}
+//	printf("%d년", year);
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
+//int main() {
+//	int num, sum = 0;
+//	while (1) { //1(0이 아닌 수)는 참이르모 무한 loop
+//		printf("정수: ");
+//		scanf("%d", &num);
+//		if (num == 0)
+//			break;
+//		sum += num;
+//	}
+//	printf("sum = %d\n", sum);
+//}
+
+//0 제외한 정수 개수를 카운트, 평균(실수값)도 출력하는 프로그램
+//go to 쓰면 시험 빵점임 
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
+//int main() {
+//	int num, count = 0, sum = 0;
+//	float average;
+//	while (1) {
+//		printf("정수: ");
+//		scanf("%d", &num);
+//		if (num == 0)
+//			break;
+//		sum += num;
+//		count++;
+//	}
+//	if (count > 0) {
+//		average = (float)sum / count; 
+//		printf("count = %d, average = %.2f\n", count, average);
+//	}
+//	else {
+//		printf("입력된 정수가 없습니다.\n");	
+//	}
+//}
+
+//p.296~ continue 문
+//0부터 10까지의 정수 중 3의 배수만 제외하고 출력
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
+//int main() {
+//	int i;
+//	for (i = 0; i < 10; i++) {
+//		if (i % 3 == 0)
+//			continue;
+//		printf("%d ", i);
+//	}
+//	printf("\n");
+//}
+
+//p.296~ continue 문
+//해당 문제를 continue 문 없이 풀어보기
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
+//int main() {
+//	int i;
+//	for (i = 0; i < 10; i++) {
+//		if (i % 3 != 0) {
+//			printf("%d ", i);
+//		}
+//	}
+//	printf("\n");
+//
+//}
+
+//p.296~ continue 문
+// 1~100 중에서 3의 배수, 1의 자리가 3, 10의 자리가 3인 수를 제외하고 출력
+//이런 느낌으로 문제 나올 수 있으!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 int main() {
-	int i, j, k;
-	for (i = 1; i <= 6; i++) {
-		for (j = 1; j <= 6; j++) {
-			for (k = 1; k <= 6; k++) {
-				if (i + j + k == 10) {
-					printf("(%d, %d, %d)", i, j, k);
-					printf("\n");
-				}
-			}
-		}
+	int i;
+	for (i = 1; i <= 100; i++) {
+		if (i % 3 == 0 || i % 10 == 3 || (i / 10) % 10 == 3)
+			continue;
+		printf("%d ", i);
+
 	}
+	printf("\n");
 }
